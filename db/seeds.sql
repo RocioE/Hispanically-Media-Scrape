@@ -1,9 +1,19 @@
--- INSERT INTO hispanicallyMedia (article_name)
--- VALUES ("headline", TRUE);
+db.hispanicallyMedia.insert({
+    "HispanicallyMedia": 
+    "Headline",  
+    "Summary", 
+    "url", 
+    "img", 
+    "time", 
+    [" ", " ", "", " ", " "]})
 
--- INSERT INTO hispanicallyMedia (article_name)
--- VALUES ("summary", TRUE);
 
--- INSERT INTO hispanicallyMedia (article_name)
--- VALUES ("url", TRUE);
+--     var article = {};
+-- article.headline = headline;
+-- article.summary = summary;
+-- article.url = url;
+-- article.img = data.img;
+-- article.time = new Date().getTime();
+-- var collection = db.collection('articles');
+
 

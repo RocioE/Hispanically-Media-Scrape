@@ -12,7 +12,27 @@ require('dotenv').config()
 var port = process.env.PORT || 8080;  //could use 3000, 5000, these are open ports
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
+var article = {};
+article.headline = headline;
+article.summary = summary;
+article.url = url;
+article.img = data.img;
+article.time = new Date().getTime();
+var collection = db.collection('hispanicallyMedia');
 
+collection.insert(artical function (err, result) {
+	console.log("inserted", article.link);
+
+	collection.findOne({link: article.link}, function (err, article) {
+		pub.publish("article:inserted", JSON.stringify(article));
+	});
+
+});
+
+}).onError(function (err) {
+console.log(err);
+});
+};
 
 
 // For serving of static CSS
