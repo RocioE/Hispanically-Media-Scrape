@@ -1,5 +1,5 @@
 db.hispanicallyMedia.insert({
-    "HispanicallyMedia": 
+    "article": 
     "Headline",  
     "Summary", 
     "url", 
