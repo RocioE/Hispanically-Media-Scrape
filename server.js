@@ -4,6 +4,7 @@ var app = express();
 var cheerio = require ('cheerio');
 var axios = require ('axios');
 var mongoose = require ('mongoose');
+var mongo= require ('mongodb');
 var express_handlebars  = require ('express-handlebars');
 var path = require("path");
 require('dotenv').config()
@@ -35,14 +36,14 @@ app.get("/", function(req, res) {
 	  if (error) {
 		console.log(error);
 	  }
-	  // If there are no errors, sends db to the browser as json
+	  // If there are no errors, then it sends db to the browser as json//
 	  else {
 		res.json(found);
 	  }
 	});
   });
 
-  // Scraping data from Hispanically Speaking News then adds it to mongodb db jquery!
+  // Scraping data from Hispanically Speaking News then adds it to mongodb db "jquery"!
 app.get("/scrape", function(req, res) {
 	// axio makes req from Hispanically Speaking News. Using Cheerio to html text using Axios req
 	axios.get("http://www.hispanicallyspeakingnews.com").then(function(response) {
@@ -55,7 +56,7 @@ app.get("/scrape", function(req, res) {
   
 // use if/else for when it finds both titel and link, it will then insert it into db//
 if (title && link) {
-	db.scrapedData.insert({
+	db.dataScraped.insert({
 	  title: title,
 	  link: link
 	},
@@ -72,7 +73,7 @@ if (title && link) {
 });
 });
 
-// Sends 'Scrape is Done!' msg to browser//
+// Sends 'Scrape is Done!' msg sen to browser//
 res.send("Scrape is Done!");
 });
 
