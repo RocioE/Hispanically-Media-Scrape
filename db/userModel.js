@@ -11,7 +11,7 @@ var UserSchema = new Schema({
     },
     //   required: "Username is Required"
 
-
+  })
 
     // This creates our model from the above schema, using mongoose's model method
 var User = mongoose.model("User", UserSchema);

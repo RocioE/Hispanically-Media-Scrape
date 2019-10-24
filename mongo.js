@@ -11,6 +11,6 @@ function article(title, content, author){
 var article1 = new article("title", "content", "author");
 
 db.article.save(article1, function(err, savedArticle){
-    if( err savedArticle) console.log("article " + err);
-    else console.log("Article + savedArticle + saved");
+    if( err){ console.log("article " + err);}
+    else {console.log("Article + savedArticle + saved");}
 });
