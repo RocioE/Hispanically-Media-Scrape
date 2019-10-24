@@ -8,3 +8,5 @@ Mongoose
 Cheerio 
 
 Axios
+
+Hosted by Heroku: https://hispanically-media-scrape.herokuapp.com/
