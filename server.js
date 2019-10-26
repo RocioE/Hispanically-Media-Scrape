@@ -3,12 +3,12 @@ var express = require('express');
 var app = express();
 var cheerio = require('cheerio');
 var axios = require('axios');
-// var mongoose = require('mongoose');
+ var mongoose = require('mongoose');
 var mongo = require('mongodb');
 var mongojs = require('mongojs')
 var express_handlebars = require('express-handlebars');
 var path = require("path");
-require('dotenv').config()
+//require('dotenv').config()
 app.engine("handlebars", express_handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 // Database config.
@@ -20,6 +20,7 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines
 mongoose.connect(MONGODB_URI);
 
 // mongojs config connects to db var, rtns db error
+//var db = mongojs(databaseUrl, collections);
 var db = mongojs(databaseUrl, collections);
 db.on("error", function (error) {
 	console.log("Database Error:", error);
