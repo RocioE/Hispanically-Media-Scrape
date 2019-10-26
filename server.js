@@ -12,7 +12,7 @@ var path = require("path");
 app.engine("handlebars", express_handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 // Database config.
-var databaseUrl = "heroku_xhvvl00v";
+var databaseUrl = "scraper";
 var collections = ["dataScraped"];
 
 var port = process.env.PORT || 8080;  //could use 3000, 5000, these are open ports
